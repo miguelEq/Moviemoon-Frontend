@@ -9,7 +9,9 @@ export default class App extends React.Component {
       urlVideo: ''
     }
   }
-  setUrlVideo = (url) => { this.setState({ urlVideo: url }) }
+  setUrlVideo = (url) => { 
+    this.setState({ urlVideo: url }) 
+  }
   getUrlVideo = () => this.state.urlVideo
   render() {
     return (

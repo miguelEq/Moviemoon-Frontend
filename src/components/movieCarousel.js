@@ -21,7 +21,7 @@ class MovieCarousel extends React.Component {
                     alt="First slide"
                 />
                 <Carousel.Caption>
-                    <Link to="/player-video" style={{ color: 'white' }} onClick={() => this.setUrlVideo(this.state.movies[0])}><h1>{this.state.movies[0].title}</h1></Link>
+                    <Link to={"/player-video/"+this.state.movies[0].title } style={{ color: 'white' }} onClick={() => this.setUrlVideo(this.state.movies[0])}><h1>{this.state.movies[0].title}</h1></Link>
                 </Carousel.Caption>
             </Carousel.Item>
 
@@ -32,7 +32,7 @@ class MovieCarousel extends React.Component {
                     alt="Second slide"
                 />
                 <Carousel.Caption>
-                    <Link to="/player-video" style={{ color: 'white' }} onClick={() => this.setUrlVideo(this.state.movies[1])}><h1>{this.state.movies[1].title}</h1></Link>
+                    <Link to={"/player-video/"+this.state.movies[0].title } style={{ color: 'white' }} onClick={() => this.setUrlVideo(this.state.movies[1])}><h1>{this.state.movies[1].title}</h1></Link>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item >
@@ -42,7 +42,7 @@ class MovieCarousel extends React.Component {
                     alt="Third slide"
                 />
                 <Carousel.Caption>
-                    <Link to="/player-video" style={{ color: 'white' }} onClick={() => this.setUrlVideo(this.state.movies[2])}><h1>{this.state.movies[2].title}</h1></Link>
+                    <Link to={"/player-video/"+this.state.movies[0].title } style={{ color: 'white' }} onClick={() => this.setUrlVideo(this.state.movies[2])}><h1>{this.state.movies[2].title}</h1></Link>
                 </Carousel.Caption>
             </Carousel.Item>
 

@@ -14,7 +14,7 @@ class VideoPlayer extends React.Component {
       <div className='player-wrapper'>
         <ReactPlayer
           className='react-player'
-          url={this.state.getUrlVideo}
+          url={this.state.getUrlVideo()}
           width='100%'
           height='100%'
           controls={true}

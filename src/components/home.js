@@ -20,7 +20,6 @@ class Home extends React.Component {
                 this.setState({
                     movies: movies // recordemos que equivale a tareas: tareas,
                 })
-                console.log(movies)
             })
             .catch(error => this.setState({ errorMessage: error }))
     }
