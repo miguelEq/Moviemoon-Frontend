@@ -6,9 +6,6 @@ import { withRouter } from 'react-router'
 import { Link } from 'react-router-dom'
 import pikachu from '../images/pikachu.jpg'
 class NavBarNavigate extends React.Component {
-    constructor(props) {
-        super(props);
-    }
     render() {
         return (
             <Navbar collapseOnSelect  bg="dark" variant="dark">
@@ -16,7 +13,7 @@ class NavBarNavigate extends React.Component {
                 <img
                     src={pikachu}
                     width="80"
-                    height="70"
+                    height="60"
                     className="d-inline-block align-top"
                     alt="Pikachu Moviemoon logo"
                 />

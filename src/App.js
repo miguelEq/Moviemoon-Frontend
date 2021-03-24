@@ -1,20 +1,16 @@
 import React from 'react';
 import { BrowserRouter,Switch,Route} from 'react-router-dom';
-import NavBarHome from './components/navbarHome';
-import NavBarNavigate from './components/navbarNavigate';
-import MoviesContainer from './components/moviesContainer'
-import MovieCarousel from './components/movieCarousel'
+import Home from './components/home'
+import Player from './components/player'
 export default class App extends React.Component{
-  constructor(props){
-    super(props)
-  } 
+
 render(){
   return (  
     
      <BrowserRouter>
       <Switch>
-          <Route exact path="/" render={props => <MovieCarousel></MovieCarousel> } ></Route>
-          <Route exact path="/player-video" render={props=><NavBarNavigate></NavBarNavigate>}></Route>
+          <Route exact path="/" render={props => <Home></Home>} ></Route>
+          <Route exact path="/player-video" render={props=><Player></Player>}></Route>
       </Switch>
      </BrowserRouter>
        );

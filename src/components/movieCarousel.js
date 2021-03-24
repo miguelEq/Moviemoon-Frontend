@@ -18,13 +18,20 @@ class MovieCarousel extends React.Component {
                     src="https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/5/54/Avengers_Age_Of_Ultron_Poster.png/revision/latest/scale-to-width-down/1000?cb=20191029195118&path-prefix=es"
                     alt="First slide"
                 />
+            <Carousel.Caption>
+            <Link to="/player-video" style={{color:'white'}}><h1>The Avengers</h1></Link>
+        </Carousel.Caption>
             </Carousel.Item>
+
             <Carousel.Item >
                 <img
                     className="d-block w-100 carousel"
                     src="https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/5/54/Avengers_Age_Of_Ultron_Poster.png/revision/latest/scale-to-width-down/1000?cb=20191029195118&path-prefix=es"
                     alt="Second slide"
                 />
+            <Carousel.Caption>
+            <Link to="/player-video" style={{color:'black'}}><h1>The Avengers</h1></Link>
+        </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item >
                 <img
@@ -32,8 +39,11 @@ class MovieCarousel extends React.Component {
                     src="https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/5/54/Avengers_Age_Of_Ultron_Poster.png/revision/latest/scale-to-width-down/1000?cb=20191029195118&path-prefix=es"
                     alt="Third slide"
                 />
-
+            <Carousel.Caption>
+            <Link to="/player-video" style={{color:'black'}}><h1>The Avengers</h1></Link>
+        </Carousel.Caption>
             </Carousel.Item>
+
         </Carousel>
     }
 }
