@@ -5,6 +5,8 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import { withRouter } from 'react-router';
 import pikachu from '../images/pikachu.jpg'
+import api from '../api/api'
+
 class NavBarHome extends React.Component {
     constructor(props) {
         super(props);
@@ -13,10 +15,20 @@ class NavBarHome extends React.Component {
             resultSearch: []
         }
     }
-    setInput = (event) => { }
 
-    executeSearch = () => {
+    search = () => {
+        console.log('---click search----')
+          if(this.state.input.trim().length === 0){
+            this.props.setSearchMovies([])
+          }else{
+          api.searchMovie(this.state.input.trim().toLowerCase())
+          .then(movies=>{
+            console.log(movies)  
+            this.props.setSearchMovies(movies)})
+          .catch(err=>console.log(err))
+          }
     }
+    inputHandler=(event)=>this.setState({input:event.target.value})
     render() {
         return (
             <Navbar collapseOnSelect expand="sm" bg="dark" variant="dark">
@@ -32,8 +44,8 @@ class NavBarHome extends React.Component {
                 <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
                     <Nav>
                         <Form inline >
-                            <Form.Control type="text" placeholder="Search" className="mr-sm-3" size="md" />
-                            <Button variant="outline-primary">Search</Button>
+                            <Form.Control  placeholder="Search" className="mr-sm-3" size="md" onChange={this.inputHandler} />
+                            <Button variant="outline-primary" onClick={this.search}>Search</Button>
                         </Form>
                     </Nav>
                 </Navbar.Collapse>

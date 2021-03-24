@@ -9,9 +9,9 @@ class Home extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            setVideo: props.setVideo,
             movies: [],
-            errorMessage: ''
+            errorMessage: '',
+            moviesSearched: []
         }
     }
     componentDidMount() {
@@ -23,16 +23,26 @@ class Home extends React.Component {
             })
             .catch(error => this.setState({ errorMessage: error }))
     }
+    setSearchMovies = (lista) => {
+        console.log('--list search--')
+        console.log(lista)
+        this.setState({
+            moviesSearched: lista
+        })
+    }
     render() {
-      
+
         return this.state.movies.length > 2 ?
-        <div>
-        <NavbarHome></NavbarHome>
-        <MovieCarousel setVideo={this.state.setVideo} movies={this.state.movies}></MovieCarousel>
-        <MoviesContainer setVideo={this.state.setVideo} movies={this.state.movies}></MoviesContainer>
-        </div>:
+            <div>
+                <NavbarHome setSearchMovies={this.setSearchMovies}></NavbarHome>
+                <MovieCarousel setVideo={this.props.setVideo} movies={this.state.movies}></MovieCarousel>
+                {this.state.moviesSearched.length === 0 ?
+                    <MoviesContainer setVideo={this.props.setVideo} movies={this.state.movies} />
+                    : <MoviesContainer setVideo={this.props.setVideo} movies={this.state.moviesSearched} />
+                }
+            </div> :
             <NavbarHome></NavbarHome>
-        
+
     }
 }
 export default withRouter(Home)

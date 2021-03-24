@@ -13,6 +13,7 @@ const request = (type, path, body) =>
 
 const api ={
     getMovies:()=> request('get', '/movies'), 
+    searchMovie:(title)=>request('get','/movies/search/'+title)
 }
 
 export default api;
