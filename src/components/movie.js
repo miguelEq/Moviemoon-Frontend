@@ -3,12 +3,22 @@ import  '../styles/movie.css'
 import {Link} from 'react-router-dom'
 
 export default class Movie extends React.Component{
-
+    constructor(props) {
+        super(props)
+        this.state = {
+            title: props.title,
+            urlImg:props.urlImg,
+            urlTrailer:props.urlTrailer,
+            setVideo:props.setVideo
+        }
+    }
+    setUrlVideo=()=>{this.state.setVideo(this.state.urlTrailer)}
     render(){
-        return (<Link to="/player-video" >
+        const path="/player-video/" + this.state.title
+        return (<Link to={path} onClick={this.setUrlVideo}>
             <img 
             className="movie" 
-            src="https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/5/54/Avengers_Age_Of_Ultron_Poster.png/revision/latest/scale-to-width-down/1000?cb=20191029195118&path-prefix=es"></img>
+            src={this.state.urlImg}></img>
             </Link>);
     }
 }

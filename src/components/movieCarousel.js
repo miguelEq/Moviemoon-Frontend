@@ -7,41 +7,43 @@ class MovieCarousel extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            movies: []
+            movies: props.movies,
+            setVideo: props.setVideo
         }
     }
+    setUrlVideo = (movie) => { this.state.setVideo(movie.trailer) }
     render() {
         return <Carousel  >
             <Carousel.Item >
-                <img     
+                <img
                     className="d-block w-100 carousel"
-                    src="https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/5/54/Avengers_Age_Of_Ultron_Poster.png/revision/latest/scale-to-width-down/1000?cb=20191029195118&path-prefix=es"
+                    src={this.state.movies[0].image}
                     alt="First slide"
                 />
-            <Carousel.Caption>
-            <Link to="/player-video" style={{color:'white'}}><h1>The Avengers</h1></Link>
-        </Carousel.Caption>
+                <Carousel.Caption>
+                    <Link to="/player-video" style={{ color: 'white' }} onClick={() => this.setUrlVideo(this.state.movies[0])}><h1>{this.state.movies[0].title}</h1></Link>
+                </Carousel.Caption>
             </Carousel.Item>
 
             <Carousel.Item >
                 <img
                     className="d-block w-100 carousel"
-                    src="https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/5/54/Avengers_Age_Of_Ultron_Poster.png/revision/latest/scale-to-width-down/1000?cb=20191029195118&path-prefix=es"
+                    src={this.state.movies[1].image}
                     alt="Second slide"
                 />
-            <Carousel.Caption>
-            <Link to="/player-video" style={{color:'black'}}><h1>The Avengers</h1></Link>
-        </Carousel.Caption>
+                <Carousel.Caption>
+                    <Link to="/player-video" style={{ color: 'white' }} onClick={() => this.setUrlVideo(this.state.movies[1])}><h1>{this.state.movies[1].title}</h1></Link>
+                </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item >
                 <img
                     className="d-block w-100 carousel"
-                    src="https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/5/54/Avengers_Age_Of_Ultron_Poster.png/revision/latest/scale-to-width-down/1000?cb=20191029195118&path-prefix=es"
+                    src={this.state.movies[2].image}
                     alt="Third slide"
                 />
-            <Carousel.Caption>
-            <Link to="/player-video" style={{color:'black'}}><h1>The Avengers</h1></Link>
-        </Carousel.Caption>
+                <Carousel.Caption>
+                    <Link to="/player-video" style={{ color: 'white' }} onClick={() => this.setUrlVideo(this.state.movies[2])}><h1>{this.state.movies[2].title}</h1></Link>
+                </Carousel.Caption>
             </Carousel.Item>
 
         </Carousel>
