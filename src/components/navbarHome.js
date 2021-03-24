@@ -23,7 +23,7 @@ class NavBarHome extends React.Component {
                 <img
                     src={pikachu}
                     width="80"
-                    height="70"
+                    height="60"
                     className="d-inline-block align-top"
                     alt="Pikachu Moviemoon logo"
                 />

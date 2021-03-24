@@ -8,14 +8,6 @@ import pikachu from '../images/pikachu.jpg'
 class NavBarNavigate extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            input: "",
-            resultSearch: []
-        }
-    }
-    setInput = (event) => { }
-
-    executeSearch = () => {
     }
     render() {
         return (
