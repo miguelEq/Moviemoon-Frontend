@@ -35,6 +35,7 @@ class Home extends React.Component {
         return this.state.movies.length > 2 ?
             <div>
                 <NavbarHome setSearchMovies={this.setSearchMovies}></NavbarHome>
+                <div style={{margin:'30px'}}></div>
                 <MovieCarousel setVideo={this.props.setVideo} movies={this.state.movies}></MovieCarousel>
                 {this.state.moviesSearched.length === 0 ?
                     <MoviesContainer setVideo={this.props.setVideo} movies={this.state.movies} />

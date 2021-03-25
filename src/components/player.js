@@ -3,16 +3,12 @@ import { withRouter } from 'react-router'
 import VideoPlayer from './videoPlayer'
 import NavBarNavigate from './navbarNavigate'
 class Player extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            getVideo: props.getVideo
-        }
-    }
+
     render() {
         return <div>
             <NavBarNavigate></NavBarNavigate>
-            <VideoPlayer getUrlVideo={this.state.getVideo}></VideoPlayer>
+            <h2 style={{ textAlign: 'center',color:'white', margin:'30px' }}>{this.props.match.params.title}</h2>
+            <VideoPlayer getUrlVideo={this.props.getVideo}></VideoPlayer>
         </div>
     }
 }
